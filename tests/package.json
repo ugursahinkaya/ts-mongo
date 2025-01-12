@@ -1,0 +1,33 @@
+{
+    "name": "@ugursahinkaya/ts-mongo-tests",
+    "version": "0.41.0",
+    "license": "GPL-3.0 or Commerical",
+    "author": "Uğur Şahinkaya <ugur@sahinkaya.xyz>",
+    "contributors": [
+        "Uğur Şahinkaya <ugur@sahinkaya.xyz>",
+        "Yusuf Kandemir <yusuf.kandemir@outlook.com.tr>"
+    ],
+    "main": "./dist/index.d.ts",
+    "module": "./dist/index.d.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "dev": "tsx watch -r dotenv-expand/config src/index.ts",
+        "generate": "node ./node_modules/@ugursahinkaya/ts-mongo/dist/index.node.js ./db.ts ./src",
+        "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+        "format": "prettier --write src/"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "node": "./dist/index.d.ts",
+            "default": "./dist/index.d.ts"
+        }
+    },
+    "dependencies": {
+        "@ugursahinkaya/mongo-client": "workspace:^0.41.0",
+        "@ugursahinkaya/query-builder": "workspace:^0.41.0",
+        "@ugursahinkaya/ts-mongo": "workspace:^0.41.0",
+        "@ugursahinkaya/ts-mongo-types": "workspace:^0.41.0",
+        "tsx": "^4.19.2"
+    }
+}

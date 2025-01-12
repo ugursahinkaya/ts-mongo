@@ -1,0 +1,67 @@
+{
+  "name": "@ugursahinkaya/query-builder",
+  "type": "module",
+  "version": "0.41.0",
+  "license": "GPL-3.0 or Commerical",
+  "description": "",
+  "author": "Uğur Şahinkaya <ugur@sahinkaya.xyz>",
+  "contributors": [
+    "Uğur Şahinkaya <ugur@sahinkaya.xyz>",
+    "Yusuf Kandemir <yusuf.kandemir@outlook.com.tr>"
+  ],
+  "homepage": "https://github.com/ugursahinkaya/query-builder#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ugursahinkaya/query-builder.git"
+  },
+  "bugs": "https://github.com/ugursahinkaya/query-builder/issues",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "node": "./dist/index.node.js",
+      "default": "./dist/index.js",
+      "umd": "./dist/index.umd.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "browser": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "packageManager": "pnpm@9.3.0",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint  --fix",
+    "build": "rollup -c",
+    "dev": "tsx watch -r dotenv-expand/config src/test.ts"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "^6.0.2",
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "rollup": "^4.30.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "5.7.3",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "@ugursahinkaya/logger": "^0.11.2",
+    "@ugursahinkaya/ts-mongo-types": "workspace:^0.41.0",
+    "bson": "^6.10.1"
+  }
+}
