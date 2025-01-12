@@ -4,7 +4,7 @@
     "outDir": "dist",
     "target": "ESNext",
     "lib": ["DOM", "ES6"],
-    "types": ["node", "jest"],
+    "types": ["node"],
     "module": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true,

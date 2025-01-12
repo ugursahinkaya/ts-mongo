@@ -6,6 +6,6 @@
     "outDir": "/dev/null", // To avoid "Cannot write file '....' because it would overwrite input file" errors
     "allowJs": true,
     "lib": ["ESNext", "dom"],
-    "types": ["node", "jest"]
+    "types": ["node"]
   }
 }
