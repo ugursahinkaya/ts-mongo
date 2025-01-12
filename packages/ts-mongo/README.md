@@ -1,4 +1,4 @@
-# Query Builder
+# ts-mongo
 
 ## License
 
