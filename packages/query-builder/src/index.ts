@@ -89,7 +89,7 @@ export function QueryBuilder<TModel extends ModelBase>({
     logger?.trace(mainPipeline, ["mainPipeline", identifier.collectionArgs?.collectionName]);
     const rowsPerPage = limit ?? DEFAULT_PAGE_LIMIT;
     const currentPage = Math.floor(skip ? skip / rowsPerPage : 1);
-    const lastItemIndex = (skip ?? 0) + rowsPerPage - 1;
+    //const lastItemIndex = (skip ?? 0) + rowsPerPage - 1;
     const finalPipeline = [
       {
         $facet: {
@@ -106,7 +106,7 @@ export function QueryBuilder<TModel extends ModelBase>({
             },
             firstItemIndex: skip ?? 0,
             lastItemIndex: {
-              $min: [lastItemIndex, { $arrayElemAt: ["$totalCount.count", 0] }]
+              $subtract: [{ $arrayElemAt: ["$totalCount.count", 0] }, 1]
             },
             currentPage: currentPage,
             rowsPerPage: rowsPerPage,
