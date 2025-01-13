@@ -267,25 +267,14 @@ export type BulkWritePayload<TModel> = {
   };
 };
 
-export declare type AnyBulkWriteOperation<TModel> =
-  | {
-      insertOne: BulkWritePayload<TModel>;
-    }
-  | {
-      replaceOne: BulkWritePayload<TModel>;
-    }
-  | {
-      updateOne: BulkWritePayload<TModel>;
-    }
-  | {
-      updateMany: BulkWritePayload<TModel>;
-    }
-  | {
-      deleteOne: BulkWritePayload<TModel>;
-    }
-  | {
-      deleteMany: BulkWritePayload<TModel>;
-    };
+export type AnyBulkWriteOperation<TModel> = Partial<{
+  insertOne: BulkWritePayload<TModel>;
+  replaceOne: BulkWritePayload<TModel>;
+  updateOne: BulkWritePayload<TModel>;
+  updateMany: BulkWritePayload<TModel>;
+  deleteOne: BulkWritePayload<TModel>;
+  deleteMany: BulkWritePayload<TModel>;
+}>;
 
 export type BulkWriteOperation<TModel> = {
   db: string;

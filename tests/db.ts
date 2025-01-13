@@ -6,7 +6,7 @@ import type {
 
 export interface User
   extends Collection<{
-    dbName: "tagi-test";
+    dbName: "blog-test";
     collectionName: "user";
   }> {
   userName: Field.String;
@@ -18,7 +18,7 @@ export interface User
 
 export interface Article
   extends Collection<{
-    dbName: "tagi-test";
+    dbName: "blog-test";
     collectionName: "article";
   }> {
   token: Field.Unique<{ generator: "uuid"; type: "string" }>;

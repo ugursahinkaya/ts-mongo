@@ -24,7 +24,7 @@ importers:
       '@types/node': 22.10.5
       '@ugursahinkaya/logger': 0.11.2
       '@ugursahinkaya/query-builder': link:../query-builder
-      '@ugursahinkaya/ts-mongo-types': link:../types
+      '@ugursahinkaya/ts-mongo-types': link:../../types
       dotenv: 16.4.7
       dotenv-expand: 12.0.1
       mongodb: 6.12.0
@@ -54,7 +54,7 @@ importers:
       vitest: ^2.1.8
     dependencies:
       '@ugursahinkaya/logger': 0.11.2
-      '@ugursahinkaya/ts-mongo-types': link:../types
+      '@ugursahinkaya/ts-mongo-types': link:../../types
       bson: 6.10.1
     devDependencies:
       '@rollup/plugin-replace': 6.0.2_rollup@4.30.1
@@ -81,7 +81,7 @@ importers:
       typescript: ~5.7.3
     dependencies:
       '@rollup/plugin-replace': 6.0.2_rollup@4.30.1
-      '@ugursahinkaya/ts-mongo-types': link:../types
+      '@ugursahinkaya/ts-mongo-types': link:../../types
       fastify: 5.2.1
       mongodb: 6.12.0
       typescript: 5.7.3
@@ -93,16 +93,9 @@ importers:
       rollup-plugin-dts: 6.1.1_qbxcerly5mjq77lxxyvsuggcv4
       rollup-plugin-typescript2: 0.36.0_qbxcerly5mjq77lxxyvsuggcv4
 
-  packages/types:
-    specifiers:
-      tsc: ^2.0.4
-      typescript: ^5.7.3
-    dependencies:
-      tsc: 2.0.4
-      typescript: 5.7.3
-
   tests:
     specifiers:
+      '@faker-js/faker': ^9.3.0
       '@ugursahinkaya/mongo-client': workspace:^0.41.0
       '@ugursahinkaya/query-builder': workspace:^0.41.0
       '@ugursahinkaya/ts-mongo': workspace:^0.41.0
@@ -112,8 +105,18 @@ importers:
       '@ugursahinkaya/mongo-client': link:../packages/mongo-client
       '@ugursahinkaya/query-builder': link:../packages/query-builder
       '@ugursahinkaya/ts-mongo': link:../packages/ts-mongo
-      '@ugursahinkaya/ts-mongo-types': link:../packages/types
+      '@ugursahinkaya/ts-mongo-types': link:../types
       tsx: 4.19.2
+    devDependencies:
+      '@faker-js/faker': 9.3.0
+
+  types:
+    specifiers:
+      tsc: ^2.0.4
+      typescript: ^5.7.3
+    dependencies:
+      tsc: 2.0.4
+      typescript: 5.7.3
 
 packages:
 
@@ -630,6 +633,11 @@ packages:
     dependencies:
       '@eslint/core': 0.10.0
       levn: 0.4.1
+    dev: true
+
+  /@faker-js/faker/9.3.0:
+    resolution: {integrity: sha512-r0tJ3ZOkMd9xsu3VRfqlFR6cz0V/jFYRswAIpC+m/DIfAUXq7g8N7wTAlhSANySXYGKzGryfDXwtwsY8TxEIDw==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
     dev: true
 
   /@fastify/ajv-compiler/4.0.2:

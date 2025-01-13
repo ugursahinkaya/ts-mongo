@@ -23,7 +23,7 @@ export const components: string[] = [];
 export const identifier = {
   "name": "User",
   "collectionArgs": {
-    "dbName": "tagi-test",
+    "dbName": "blog-test",
     "collectionName": "user"
   },
   "fields": {
@@ -114,7 +114,7 @@ export const identifier = {
             false
           ]
         ],
-        "db": "tagi-test",
+        "db": "blog-test",
         "collection": "article"
       },
       "array": true
