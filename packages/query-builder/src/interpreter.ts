@@ -158,7 +158,12 @@ export class Interpreter<TModel extends Record<string, any> & { _id?: any }> {
     items.forEach((item: any) => {
       const operationKey = new ObjectId();
       const queryHasUniqueValue = this.hasUniqueValue({ ...item, ...where });
-      const updateType = item._id || item.id || queryHasUniqueValue ? "updateOne" : "updateMany";
+      const updateType =
+        item._id || item.id || queryHasUniqueValue
+          ? "updateOne"
+          : where === undefined && upsert
+            ? "insertOne"
+            : "updateMany";
       //assignObjectId(item, upsert);
       /*
       let filter =
@@ -168,24 +173,34 @@ export class Interpreter<TModel extends Record<string, any> & { _id?: any }> {
             ? { _id: item._id }
             : { _id: { $in: { $collectedData: [0, this.collection, itemIndex] } } };
             */
-      let filter = item._id ? { _id: item._id } : where;
-      const selector: Record<string, any> =
-        updateType === "updateMany"
-          ? {
-              [OPERATION_KEY]: operationKey,
-              [TRANSACTION_KEY]: transactionKey
-            }
-          : where;
-      let update: Record<string, any> = this.generateMainRawUpdate(item, selector, now);
-      mainWriteOperation.payload.push({
-        [updateType]: {
-          filter,
-          update,
-          upsert
+      if (updateType === "insertOne") {
+        mainWriteOperation.payload.push({
+          [updateType]: {
+            ...item,
+            [TRANSACTION_KEY]: transactionKey,
+            [OPERATION_KEY]: operationKey
+          }
+        });
+      } else {
+        let filter = item._id ? { _id: item._id } : where;
+        const selector =
+          updateType === "updateMany"
+            ? {
+                [OPERATION_KEY]: operationKey,
+                [TRANSACTION_KEY]: transactionKey
+              }
+            : where;
+        let update = this.generateMainRawUpdate(item, selector, now);
+        mainWriteOperation.payload.push({
+          [updateType]: {
+            filter,
+            update,
+            upsert
+          }
+        });
+        if (updateType === "updateMany") {
+          itemIndex++;
         }
-      } as AnyBulkWriteOperation<TModel>);
-      if (updateType === "updateMany") {
-        itemIndex++;
       }
       if (!relationPayload) {
         const $addToSet = this.generateRelationSet(item);
