@@ -1,4 +1,5 @@
 import typescript from "rollup-plugin-typescript2";
+import terser from "@rollup/plugin-terser";
 import dts from "rollup-plugin-dts";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
@@ -12,6 +13,7 @@ export default [
     output: {
       file: "dist/index.node.js",
       format: "es",
+      sourcemap: false,
       globals: {
         bson: "bson",
         crypto: "crypto",
@@ -21,6 +23,14 @@ export default [
     plugins: [
       typescript({
         tsconfig: "./tsconfig.json"
+      }),
+      terser({
+        format: {
+          comments: false
+        },
+        compress: {
+          drop_console: true
+        }
       })
     ]
   },
@@ -30,6 +40,7 @@ export default [
       {
         file: "dist/index.js",
         format: "es",
+        sourcemap: false,
         globals: {
           bson: "bson",
           crypto: "crypto",
@@ -40,6 +51,7 @@ export default [
         file: "dist/query-builder.umd.js",
         name: "YUM",
         extend: true,
+        sourcemap: false,
         format: "umd",
         globals: {
           bson: "bson",
@@ -51,6 +63,14 @@ export default [
     plugins: [
       typescript({
         tsconfig: "./tsconfig.json"
+      }),
+      terser({
+        format: {
+          comments: false
+        },
+        compress: {
+          drop_console: true
+        }
       })
     ]
   },

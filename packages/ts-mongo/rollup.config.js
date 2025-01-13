@@ -1,5 +1,6 @@
 import typescript from "rollup-plugin-typescript2";
 import dts from "rollup-plugin-dts";
+import terser from "@rollup/plugin-terser";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
 import replace from "@rollup/plugin-replace";
@@ -12,10 +13,19 @@ export default [
     output: {
       file: "dist/index.node.js",
       format: "es",
+      sourcemap: false,
     },
     plugins: [
       typescript({
         tsconfig: "./tsconfig.json",
+      }),
+      terser({
+        format: {
+          comments: false,
+        },
+        compress: {
+          drop_console: true,
+        },
       }),
     ],
   },
@@ -25,10 +35,12 @@ export default [
       {
         file: "dist/index.js",
         format: "es",
+        sourcemap: false,
       },
       {
         file: "dist/ts-mongo.umd.js",
         name: "YUM",
+        sourcemap: false,
         extend: true,
         format: "umd",
       },
@@ -58,6 +70,14 @@ if (import.meta.url === \`file://\${__filename}\`) {
       }),
       typescript({
         tsconfig: "./tsconfig.json",
+      }),
+      terser({
+        format: {
+          comments: false,
+        },
+        compress: {
+          drop_console: true,
+        },
       }),
     ],
   },

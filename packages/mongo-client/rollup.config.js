@@ -1,4 +1,5 @@
 import typescript from "rollup-plugin-typescript2";
+import terser from "@rollup/plugin-terser";
 import dts from "rollup-plugin-dts";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
@@ -11,11 +12,20 @@ export default [
     input: "src/index.ts",
     output: {
       file: "dist/index.js",
-      format: "es"
+      format: "es",
+      sourcemap: false
     },
     plugins: [
       typescript({
         tsconfig: "./tsconfig.json"
+      }),
+      terser({
+        format: {
+          comments: false
+        },
+        compress: {
+          drop_console: true
+        }
       })
     ]
   },
