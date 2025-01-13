@@ -24,10 +24,10 @@
         }
     },
     "dependencies": {
-        "@ugursahinkaya/mongo-client": "^0.41.0",
-        "@ugursahinkaya/query-builder": "^0.41.0",
-        "@ugursahinkaya/ts-mongo": "^0.41.0",
-        "@ugursahinkaya/ts-mongo-types": "^0.41.0",
+        "@ugursahinkaya/mongo-client": "^0.42.0",
+        "@ugursahinkaya/query-builder": "^0.42.0",
+        "@ugursahinkaya/ts-mongo": "^0.42.0",
+        "@ugursahinkaya/ts-mongo-types": "^0.42.0",
         "tsx": "^4.19.2"
     },
     "devDependencies": {
