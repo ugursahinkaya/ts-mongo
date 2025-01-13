@@ -7,8 +7,8 @@ importers:
       '@rollup/plugin-terser': ^0.4.4
       '@types/node': ^22.10.5
       '@ugursahinkaya/logger': ^0.11.2
-      '@ugursahinkaya/query-builder': ^0.42.0
-      '@ugursahinkaya/ts-mongo-types': ^0.42.0
+      '@ugursahinkaya/query-builder': ^0.42.1
+      '@ugursahinkaya/ts-mongo-types': ^0.42.1
       dotenv: ^16.4.7
       dotenv-expand: ^12.0.1
       eslint: ^9.18.0
@@ -46,7 +46,7 @@ importers:
       '@rollup/plugin-replace': ^6.0.2
       '@rollup/plugin-terser': ^0.4.4
       '@ugursahinkaya/logger': ^0.11.2
-      '@ugursahinkaya/ts-mongo-types': ^0.42.0
+      '@ugursahinkaya/ts-mongo-types': ^0.42.1
       bson: ^6.10.1
       eslint: ^9.18.0
       prettier: ^3.4.2
@@ -75,7 +75,7 @@ importers:
       '@rollup/plugin-replace': ^6.0.2
       '@rollup/plugin-terser': ^0.4.4
       '@types/node': ^22.10.5
-      '@ugursahinkaya/ts-mongo-types': ^0.42.0
+      '@ugursahinkaya/ts-mongo-types': ^0.42.1
       eslint: ^9.18.0
       fastify: ^5.2.1
       mongodb: ^6.12.0
@@ -102,10 +102,10 @@ importers:
   tests:
     specifiers:
       '@faker-js/faker': ^9.3.0
-      '@ugursahinkaya/mongo-client': ^0.42.0
-      '@ugursahinkaya/query-builder': ^0.42.0
-      '@ugursahinkaya/ts-mongo': ^0.42.0
-      '@ugursahinkaya/ts-mongo-types': ^0.42.0
+      '@ugursahinkaya/mongo-client': ^0.42.1
+      '@ugursahinkaya/query-builder': ^0.42.1
+      '@ugursahinkaya/ts-mongo': ^0.42.1
+      '@ugursahinkaya/ts-mongo-types': ^0.42.1
       tsx: ^4.19.2
     dependencies:
       '@ugursahinkaya/mongo-client': link:../packages/mongo-client
@@ -1015,7 +1015,7 @@ packages:
       '@vitest/spy': 2.1.8
       estree-walker: 3.0.3
       magic-string: 0.30.17
-      vite: 5.4.11
+      vite: 5.4.11_@types+node@22.10.5
     dev: true
 
   /@vitest/pretty-format/2.1.8:

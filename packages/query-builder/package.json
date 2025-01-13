@@ -1,7 +1,7 @@
 {
   "name": "@ugursahinkaya/query-builder",
   "type": "module",
-  "version": "0.42.0",
+  "version": "0.42.1",
   "license": "GPL-3.0 or Commerical",
   "description": "",
   "author": "Uğur Şahinkaya <ugur@sahinkaya.xyz>",
@@ -62,7 +62,7 @@
   },
   "dependencies": {
     "@ugursahinkaya/logger": "^0.11.2",
-    "@ugursahinkaya/ts-mongo-types": "^0.42.0",
+    "@ugursahinkaya/ts-mongo-types": "^0.42.1",
     "bson": "^6.10.1"
   }
 }

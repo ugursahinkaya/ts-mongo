@@ -1,7 +1,7 @@
 {
   "name": "@ugursahinkaya/mongo-client",
   "type": "module",
-  "version": "0.42.0",
+  "version": "0.42.1",
   "license": "GPL-3.0 or Commerical",
   "description": "",
   "author": "Uğur Şahinkaya <ugur@sahinkaya.xyz>",
@@ -59,8 +59,8 @@
   "dependencies": {
     "@types/node": "^22.10.5",
     "@ugursahinkaya/logger": "^0.11.2",
-    "@ugursahinkaya/query-builder": "^0.42.0",
-    "@ugursahinkaya/ts-mongo-types": "^0.42.0",
+    "@ugursahinkaya/query-builder": "^0.42.1",
+    "@ugursahinkaya/ts-mongo-types": "^0.42.1",
     "dotenv": "^16.4.7",
     "dotenv-expand": "^12.0.1",
     "mongodb": "6.12.0",
